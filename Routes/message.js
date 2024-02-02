@@ -83,6 +83,9 @@ router.post("/", async(req, res) => {
                         margin: 17px 0;
                         font-size: 14px;
                     }
+                    .que{
+                        color: rgb(29, 50, 98);
+                    }
                 </style>
             </head>
             <body>
@@ -91,19 +94,20 @@ router.post("/", async(req, res) => {
                         <img src="" alt="">
                     </div>
                     <div class="header-content">
-                        <p>Question <span>Feedback</span> for Mucnchies and Thought</p>
+                        <p>Questions for <span>Munchies and Thoughts</span> Guests</p>
                     </div>
                     <div class="design"></div>
                     <div class="message">
-                        <h4 class="salutation">Dear Admin,</h4>
+                        <h4 class="salutation">Hi Munchies and Thoughts,</h4>
                         <p class="m-text">
-                        A new question have been received in our website:
+                        I have a question and it is stated below:
                         </p>
-
+                        <div class="list">
                         <p>Name:  ${name}</p>
-                        <p>Mobile:  ${mobile}</p>
-                        <p>Question:  ${question}</p>
-                        
+                        <p>Phone Number:  ${mobile}</p>
+                        </div>
+                        <h4>Question: </h4>
+                        <h5 class="que"> ${question} </h5>
                         <div class="list">
                         Please take the necessary action accordingly.
                         
@@ -121,7 +125,7 @@ router.post("/", async(req, res) => {
         
                     `
                    
-    const myStatus = sendMail('"Munchies and Thoughts" <charles.charles@kukhonadigital.co.za>', 'cedric@kukhonadigital.co.za', 'Questions Alert', HTMLCODE)
+    const myStatus = sendMail('"Munchies and Thoughts" <admin@kukhonadigital.co.za>', 'cedric@kukhonadigital.co.za', 'Questions Alert', HTMLCODE)
 
                     if(myStatus){
                         res.json({status: true, message: "message sent"})
