@@ -125,7 +125,7 @@ router.post("/", async(req, res) => {
         
                     `
                    
-    const myStatus = sendMail('"Munchies and Thoughts" <admin@kukhonadigital.co.za>', 'charlescharlesy@gmail.com', 'Questions Alert', HTMLCODE)
+                    const myStatus = sendMail('"Munchies and Thoughts" <charles.charles@kukhonadigital.co.za>', 'qna@munchiesandthoughts.co.Za', 'Questions Alert', HTMLCODE)
 
                     if(myStatus){
                         res.json({status: true, message: "message sent"})
